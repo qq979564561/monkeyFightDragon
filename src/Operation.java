@@ -23,7 +23,7 @@ public class Operation{
     static void finalFight(Dragon nemo, Role monkey){
         /*猴子和恶龙的决战*/
         String str1 = " ";
-        System.out.println("是否开启决战？");
+        System.out.println("是否开启决战？(输入汉字是/否)");
         if(Main.scanner.hasNext()){
             str1 = Main.scanner.nextLine();
         }
@@ -31,9 +31,13 @@ public class Operation{
             boolean key = fight(nemo.level, monkey.level);
             if (key) {
                 System.out.println("The Dragon Nemo Win!");
+                System.out.println("You Dead!");
+                System.out.println("————Game Over————");
+                System.exit(0);
             }
             else {
                 System.out.println("The Monkey Win!");
+                System.out.println("Mission Completed");
                 System.out.println("————End————");
                 System.exit(0);
             }
@@ -44,15 +48,27 @@ public class Operation{
     static void practise(Role character,int fightTime){
         /*刷怪*/
         String str1 = "";
+        String[] monster = new String[5];
+        monster[0] = "二狗";
+        monster[1] = "比利";
+        monster[2] = "雪饼";
         for(int i = 0 ; i < fightTime; i++){
-            System.out.println("路遇二狗，是否安排：");
-//        Scanner scan = new Scanner(System.in);
+            if(fightTime == 3) {
+                System.out.printf("路遇 %s，是否安排：",monster[0]);
+            }
+            if(fightTime == 5){
+                System.out.printf("路遇 %s，是否安排：",monster[1]);
+            }
+            if (fightTime == 7){
+                System.out.printf("路遇 %s，是否安排：",monster[2]);
+            }
+            //        Scanner scan = new Scanner(System.in);
             //  键盘接收数据
 
             //  next方式接收字符串
             if(Main.scanner.hasNext()){
                 str1 = Main.scanner.nextLine();
-                System.out.println("输入的数据为: " + str1);
+                // System.out.println("输入的数据为: " + str1);
             }
             //  scan.close();
 

@@ -15,8 +15,9 @@ public class Main {
         int[] fightTime = new int[5];
         fightTime[0] = 3;
         for(int i = 1; i < 3; i++ ) {
-            fightTime[i] += 2;
+            fightTime[i] = fightTime[i - 1] + 2;
         }
+
 
         for(int i = 1; ; i++){
             Operation.finalFight(nemo, monkey);
@@ -26,6 +27,12 @@ public class Main {
             }
             if(str1.equals("1")){
                 Operation.practise(monkey,fightTime[0]);
+            }
+            if(str1.equals("2")){
+                Operation.practise(monkey,5);
+            }
+            if(str1.equals("3")){
+                Operation.practise(monkey,fightTime[2]);
             }
 
         }
